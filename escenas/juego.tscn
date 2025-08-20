@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2u6imr0r7bkp"]
+
+[ext_resource type="Script" uid="uid://cvyfx5u2r62io" path="res://scripts/Juego.gd" id="1"]
+
+[node name="Juego" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Escena del JUEGO (WIP)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonVolver" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+text = "Volver al menú"

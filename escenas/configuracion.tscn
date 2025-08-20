@@ -1,0 +1,203 @@
+[gd_scene load_steps=5 format=3 uid="uid://b246qobuwvc63"]
+
+[ext_resource type="Script" uid="uid://duvvnrfnru2wb" path="res://scripts/Configuracion.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://k660o82rlk3n" path="res://Imagenes/Imagen menu principal 1920x1080.png" id="2_onj0v"]
+[ext_resource type="FontFile" uid="uid://ca3rtu5f54jyf" path="res://fuentes/ComicNeue-Bold.ttf" id="3_noe7d"]
+[ext_resource type="Theme" uid="uid://wraeo6rqta1n" path="res://theme/EcoKidsTheme.tres" id="3_o4ymc"]
+
+[node name="Configuracion" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_o4ymc")
+script = ExtResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_onj0v")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_o4ymc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(560, 1000)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_noe7d")
+text = "Configuración (WIP)"
+vertical_alignment = 1
+
+[node name="Video" type="Panel" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Video"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Video" type="Label" parent="CenterContainer/VBoxContainer/Video/VBoxContainer"]
+layout_mode = 2
+text = "Video"
+
+[node name="PantallaCompleta" type="CheckBox" parent="CenterContainer/VBoxContainer/Video/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pantalla Completa"
+
+[node name="VSync" type="CheckBox" parent="CenterContainer/VBoxContainer/Video/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "VSync"
+
+[node name="Resolución2" type="Label" parent="CenterContainer/VBoxContainer/Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Resolución"
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/VBoxContainer/Video/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+selected = 0
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Sonido" type="Panel" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Sonido"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Sonido" type="Label" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer"]
+layout_mode = 2
+text = "Sonido"
+
+[node name="ChkMusica" type="CheckBox" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_noe7d")
+text = "Música: Activar/Desactivar"
+
+[node name="ChkFX" type="CheckBox" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_noe7d")
+text = "SFX: Activar/Desactivar"
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Volumen" type="Label" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Volumen"
+
+[node name="HSliderVolumen" type="HSlider" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer/HBoxContainer1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Música" type="Label" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Música"
+
+[node name="SldMusica" type="HSlider" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Efectos de Sonido" type="Label" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+text = "Efectos de Sonido"
+
+[node name="SldFX" type="HSlider" parent="CenterContainer/VBoxContainer/Sonido/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Guardar" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Guardar"
+
+[node name="ButtonVolver" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Volver"

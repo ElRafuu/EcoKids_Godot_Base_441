@@ -1,0 +1,8 @@
+[gd_resource type="Font" load_steps=2 format=3 uid="uid://bdacqpmqvcnat"]
+
+[ext_resource type="FontFile" uid="uid://ca3rtu5f54jyf" path="res://fuentes/ComicNeue-Bold.ttf" id="1"]
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+data = ExtResource("1")

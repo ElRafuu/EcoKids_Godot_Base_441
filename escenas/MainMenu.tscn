@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://lsh1xr7yjkuf"]
+
+[ext_resource type="Script" uid="uid://23ygh83pmunq" path="res://scripts/MainMenu.gd" id="1"]
+[ext_resource type="Theme" uid="uid://wraeo6rqta1n" path="res://theme/EcoKidsTheme.tres" id="1_mx54d"]
+[ext_resource type="Texture2D" uid="uid://k660o82rlk3n" path="res://Imagenes/Imagen menu principal 1920x1080.png" id="2_0hp0g"]
+[ext_resource type="FontFile" uid="uid://ca3rtu5f54jyf" path="res://fuentes/ComicNeue-Bold.ttf" id="3_os0h1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mx54d")
+script = ExtResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0hp0g")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_os0h1")
+theme_override_font_sizes/font_size = 96
+text = "TÍTULO DEL JUEGO"
+horizontal_alignment = 1
+
+[node name="BtnJugar" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_os0h1")
+theme_override_font_sizes/font_size = 48
+text = "Jugar"
+
+[node name="BtnConfig" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_os0h1")
+theme_override_font_sizes/font_size = 48
+text = "Configuración"
+
+[node name="BtnSalir" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_os0h1")
+theme_override_font_sizes/font_size = 48
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
