@@ -1,26 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2u6imr0r7bkp"]
+[gd_scene load_steps=5 format=3 uid="uid://c2u6imr0r7bkp"]
 
 [ext_resource type="Script" uid="uid://cvyfx5u2r62io" path="res://scripts/Juego.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cdjbn5uykido4" path="res://escenas/Trash.tscn" id="2_t4q8c"]
+[ext_resource type="PackedScene" uid="uid://bk3dvlb54sgcn" path="res://escenas/Player.tscn" id="2_v0a8y"]
+[ext_resource type="PackedScene" uid="uid://d8k73mdktgu5" path="res://ui/HUD.tscn" id="4_qnwci"]
 
-[node name="Juego" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Juego" type="Node2D" groups=["juego"]]
 script = ExtResource("1")
+escena_basura = ExtResource("2_t4q8c")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Escena del JUEGO (WIP)"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="TrashContainer" type="Node2D" parent="."]
 
-[node name="ButtonVolver" type="Button" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-text = "Volver al menú"
+[node name="Fondo" type="MeshInstance2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("2_v0a8y")]
+position = Vector2(727, 347)
+
+[node name="RoundTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="DifficultyTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("4_qnwci")]

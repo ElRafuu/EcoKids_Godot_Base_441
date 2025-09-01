@@ -1,3 +1,158 @@
-[gd_scene format=3 uid="uid://d8k73mdktgu5"]
+[gd_scene load_steps=2 format=3 uid="uid://d8k73mdktgu5"]
 
-[node name="Hud" type="Node2D"]
+[ext_resource type="Script" uid="uid://0dc0ywbtgqks" path="res://scripts/HUD.gd" id="1_1x8ju"]
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_1x8ju")
+
+[node name="Root" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/VBoxContainer"]
+layout_mode = 2
+
+[node name="Limpieza" type="Label" parent="Root/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Limpieza"
+
+[node name="Tiempo" type="Label" parent="Root/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Tiempo"
+
+[node name="TiempoLabel" type="Label" parent="Root/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1:30"
+
+[node name="LimpiezaBar" type="ProgressBar" parent="Root/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+value = 70.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Root/VBoxContainer"]
+layout_mode = 2
+
+[node name="Estrellas" type="Label" parent="Root/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Estrellas"
+
+[node name="Starsbox" type="HBoxContainer" parent="Root/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Star1" type="TextureRect" parent="Root/VBoxContainer/HBoxContainer2/Starsbox"]
+layout_mode = 2
+
+[node name="Star2" type="TextureRect" parent="Root/VBoxContainer/HBoxContainer2/Starsbox"]
+layout_mode = 2
+
+[node name="Star3" type="TextureRect" parent="Root/VBoxContainer/HBoxContainer2/Starsbox"]
+layout_mode = 2
+
+[node name="EstadoLabel" type="Label" parent="Root/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.00392157)
+
+[node name="PausePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pausa" type="Label" parent="PausePanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnResume" type="Button" parent="PausePanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reanudar"
+
+[node name="BtnConfig" type="Button" parent="PausePanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Configuración"
+
+[node name="BtnExit" type="Button" parent="PausePanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Salir"
+
+[node name="ResultPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResultTitle" type="Label" parent="ResultPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "¡Resultados!"
+
+[node name="ResultMsg" type="Label" parent="ResultPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResultStarsBox" type="HBoxContainer" parent="ResultPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResultStar1" type="TextureRect" parent="ResultPanel/VBoxContainer/ResultStarsBox"]
+layout_mode = 2
+
+[node name="ResultStar2" type="TextureRect" parent="ResultPanel/VBoxContainer/ResultStarsBox"]
+layout_mode = 2
+
+[node name="ResultStar3" type="TextureRect" parent="ResultPanel/VBoxContainer/ResultStarsBox"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ResultPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnRetry" type="Button" parent="ResultPanel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reintentar"
+
+[node name="BtnSelect" type="Button" parent="ResultPanel/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Seleccionar Ambiente"
